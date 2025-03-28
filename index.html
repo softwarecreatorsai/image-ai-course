@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>יוצר המודלים - הדרך המקצועית ליצירת מודל תמונה אישי</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+        --background: #1a1a1a;
+        --text-primary: #b2d272;
+        --text-secondary: #c9aed3;
+        --accent: #80b34f;
+        --dark-accent: #424242;
+        --light-bg: #2a2a2a;
+        --white: #f0f0f0;
+        --text-white-main: #f5f5f5;
+        --text-white-subtle: #cccccc;
+    }
+
+    body {
+      font-family: 'Heebo', sans-serif;
+    }
+
+    @keyframes blob {
+      0% { transform: translate(0px, 0px) scale(1); }
+      33% { transform: translate(30px, -50px) scale(1.1); }
+      66% { transform: translate(-20px, 20px) scale(0.9); }
+      100% { transform: translate(0px, 0px) scale(1); }
+    }
+    .animate-blob { animation: blob 7s infinite; }
+    .animation-delay-2000 { animation-delay: 2s; }
+    .animation-delay-4000 { animation-delay: 4s; }
+
+    @keyframes slide-up {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .animate-slide-up { animation: slide-up 0.7s ease-out forwards; }
+
+    .transition-all {
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 300ms;
+    }
+    .ease-apple {
+      transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .text-gradient-primary {
+      background-image: linear-gradient(to right, var(--text-primary), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .text-gradient-secondary {
+      background-image: linear-gradient(to right, var(--text-secondary), #a98eb3);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .text-gradient-white {
+       background-image: linear-gradient(to right, var(--text-white-main), var(--text-white-subtle));
+       -webkit-background-clip: text;
+       background-clip: text;
+       color: transparent;
+    }
+
+    .includes li::before {
+        content: '✔';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--text-primary);
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1;
+    }
+    .includes li {
+        position: relative;
+        padding-right: 2rem;
+    }
+
+  </style>
+</head>
+<body class="bg-gradient-to-b from-[var(--background)] to-[#222] text-[var(--text-white-main)] transition-colors duration-300">
+
+  <section class="relative pt-16 pb-20 overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-6xl max-h-6xl">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-[var(--text-primary)]/10 rounded-full blur-3xl opacity-50 animate-blob"></div>
+      <div class="absolute top-0 left-0 w-96 h-96 bg-[var(--text-secondary)]/10 rounded-full blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
+      <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-[var(--accent)]/10 rounded-full blur-3xl opacity-50 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
+      <div class="flex flex-col items-center text-center space-y-8">
+        <div class="space-y-6 max-w-3xl animate-slide-up">
+          <div class="inline-block mb-4">
+            <div class="flex items-center gap-2 px-4 py-2 bg-[var(--light-bg)] rounded-full text-sm font-medium text-[var(--text-primary)] border border-[var(--accent)]/50 shadow-sm">
+              <i class="fas fa-star text-sm"></i>
+              <span>הדרך המקצועית ליצירת מודל תמונה אישי</span>
+            </div>
+          </div>
+
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gradient-white leading-tight">
+             צור תמונות AI <span class="text-gradient-primary">שנראות בדיוק</span> כמוך
+          </h1>
+          <p class="text-xl text-[var(--text-white-subtle)] max-w-2xl mx-auto">
+            גלה איך לייצר מודל תמונה אישי ומדויק באיכות שאפילו הכלים המתקדמים ביותר לא יכולים להתחרות בה.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-4 animate-slide-up" style="animation-delay: 0.2s;">
+          <a href="#pricing" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-[var(--background)] bg-gradient-to-r from-[var(--text-primary)] to-[var(--accent)] hover:brightness-110 shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+            קבל גישה מיידית
+            <i class="fas fa-arrow-left mr-2"></i>
+          </a>
+          <a href="#features" class="inline-flex items-center justify-center px-8 py-3 border border-[var(--dark-accent)] text-[var(--text-white-subtle)] text-base font-medium rounded-full bg-transparent hover:bg-[var(--light-bg)]/50 transition-all">
+            למד עוד על התהליך
+          </a>
+        </div>
+
+        <div class="relative w-full max-w-4xl mx-auto mt-12 animate-slide-up" style="animation-delay: 0.4s;">
+          <div class="aspect-[16/9] bg-gradient-to-br from-[var(--light-bg)]/50 to-[var(--dark-accent)]/50 overflow-hidden rounded-xl border border-[var(--dark-accent)] shadow-2xl shadow-[var(--text-primary)]/5">
+            <div class="absolute inset-0 flex items-center justify-center p-6">
+               <div class="flex items-center space-x-6 rtl:space-x-reverse">
+                   <div class="flex flex-col space-y-2 items-center">
+                       <div class="w-16 h-16 rounded-lg bg-[var(--dark-accent)] border border-[var(--text-secondary)]/30 flex items-center justify-center text-[var(--text-secondary)] opacity-70"><i class="fas fa-image"></i></div>
+                       <div class="w-12 h-12 rounded-lg bg-[var(--dark-accent)] border border-[var(--text-secondary)]/30 flex items-center justify-center text-[var(--text-secondary)] opacity-50"><i class="fas fa-images"></i></div>
+                       <div class="text-xs text-[var(--text-white-subtle)] mt-1">תמונות מקור</div>
+                   </div>
+                   <i class="fas fa-long-arrow-alt-left text-3xl text-[var(--accent)] opacity-60"></i>
+                   <div class="flex flex-col items-center">
+                       <div class="w-24 h-24 rounded-full border-4 border-[var(--accent)] flex items-center justify-center bg-[var(--light-bg)] shadow-lg shadow-[var(--accent)]/20">
+                            <i class="fas fa-brain text-3xl text-[var(--accent)]"></i>
+                       </div>
+                       <div class="text-xs text-[var(--text-white-subtle)] mt-1">אימון מודל</div>
+                   </div>
+                   <i class="fas fa-long-arrow-alt-left text-3xl text-[var(--text-primary)] opacity-80"></i>
+                   <div class="flex flex-col items-center">
+                       <div class="w-20 h-20 rounded-lg bg-[var(--light-bg)] border-2 border-[var(--text-primary)]/50 flex items-center justify-center text-[var(--text-primary)] shadow-md shadow-[var(--text-primary)]/10"><i class="fas fa-user-check text-2xl"></i></div>
+                       <div class="text-xs text-[var(--text-white-subtle)] mt-1">תוצאה מדויקת</div>
+                   </div>
+               </div>
+            </div>
+          </div>
+          <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2">
+            <div class="px-6 py-3 rounded-full text-sm font-medium bg-[var(--light-bg)]/80 backdrop-blur-md shadow-lg border border-[var(--accent)]/30 text-[var(--text-primary)]">
+              דיוק פוטו-ריאליסטי • שליטה מלאה • תוצאות עקביות
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="py-20 bg-gradient-to-b from-[#222] to-[var(--background)]">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-16 animate-on-scroll">
+        <div class="inline-block mb-4">
+          <div class="px-4 py-2 bg-[var(--light-bg)] rounded-full text-sm font-medium text-[var(--text-primary)] border border-[var(--accent)]/50">
+            היתרונות המרכזיים
+          </div>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-[var(--white)]">
+          המהפכה <span class="text-gradient-primary">האישית</span> בתמונות AI
+        </h2>
+        <p class="text-lg text-[var(--text-white-subtle)] max-w-2xl mx-auto">
+          גלה את הכלים והטכניקות ליצירת מודל תמונה אישי שמשאיר את הכלים הגנריים מאחור.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div class="bg-[var(--light-bg)] rounded-xl shadow-lg border border-[var(--dark-accent)] overflow-hidden hover:shadow-[0_0_20px_rgba(178,210,114,0.15)] transition-all duration-300 animate-on-scroll transform hover:-translate-y-2">
+          <div class="bg-gradient-to-r from-[var(--text-primary)] to-[var(--accent)] h-2"></div>
+          <div class="p-6">
+            <div class="w-12 h-12 bg-[var(--dark-accent)] rounded-lg flex items-center justify-center mb-4">
+              <i class="fas fa-camera-retro text-xl text-[var(--text-primary)]"></i>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--white)] mb-3">עקרונות צילום</h3>
+            <p class="text-[var(--text-white-subtle)] text-sm mb-4">
+              למד טכניקות תאורה, זוויות והגדרות לשיפור דרמטי של איכות תמונות המקור שלך.
+            </p>
+             <a href="#process" class="inline-flex items-center text-[var(--accent)] hover:text-[var(--text-primary)] font-medium text-sm">
+              ראה את התהליך
+              <i class="fas fa-arrow-left mr-1 text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-[var(--light-bg)] rounded-xl shadow-lg border border-[var(--dark-accent)] overflow-hidden hover:shadow-[0_0_20px_rgba(178,210,114,0.15)] transition-all duration-300 animate-on-scroll transform hover:-translate-y-2" style="animation-delay: 0.1s;">
+           <div class="bg-gradient-to-r from-[var(--accent)] to-[var(--text-secondary)] h-2"></div>
+          <div class="p-6">
+            <div class="w-12 h-12 bg-[var(--dark-accent)] rounded-lg flex items-center justify-center mb-4">
+              <i class="fas fa-database text-xl text-[var(--accent)]"></i>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--white)] mb-3">סט נתונים אופטימלי</h3>
+            <p class="text-[var(--text-white-subtle)] text-sm mb-4">
+              גלה איך לבחור, לערוך ולהכין את סט התמונות המושלם לאימון המודל האישי שלך.
+            </p>
+             <a href="#process" class="inline-flex items-center text-[var(--accent)] hover:text-[var(--text-primary)] font-medium text-sm">
+              ראה את התהליך
+              <i class="fas fa-arrow-left mr-1 text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-[var(--light-bg)] rounded-xl shadow-lg border border-[var(--dark-accent)] overflow-hidden hover:shadow-[0_0_20px_rgba(178,210,114,0.15)] transition-all duration-300 animate-on-scroll transform hover:-translate-y-2" style="animation-delay: 0.2s;">
+           <div class="bg-gradient-to-r from-[var(--text-secondary)] to-[var(--text-primary)] h-2"></div>
+          <div class="p-6">
+            <div class="w-12 h-12 bg-[var(--dark-accent)] rounded-lg flex items-center justify-center mb-4">
+              <i class="fas fa-cogs text-xl text-[var(--text-secondary)]"></i>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--white)] mb-3">אימון מודל מדויק</h3>
+            <p class="text-[var(--text-white-subtle)] text-sm mb-4">
+              השתמש ב-FAL להגדרת פרמטרים מדויקים וקבלת תוצאות מיטביות תוך מניעת בעיות נפוצות.
+            </p>
+            <a href="#process" class="inline-flex items-center text-[var(--accent)] hover:text-[var(--text-primary)] font-medium text-sm">
+              ראה את התהליך
+              <i class="fas fa-arrow-left mr-1 text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+         <div class="bg-[var(--light-bg)] rounded-xl shadow-lg border border-[var(--dark-accent)] overflow-hidden hover:shadow-[0_0_20px_rgba(178,210,114,0.15)] transition-all duration-300 animate-on-scroll transform hover:-translate-y-2" style="animation-delay: 0.3s;">
+           <div class="bg-gradient-to-r from-[var(--text-primary)] to-[var(--accent)] h-2"></div>
+          <div class="p-6">
+            <div class="w-12 h-12 bg-[var(--dark-accent)] rounded-lg flex items-center justify-center mb-4">
+              <i class="fas fa-bolt text-xl text-[var(--text-primary)]"></i>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--white)] mb-3">שימוש קל ומהיר</h3>
+            <p class="text-[var(--text-white-subtle)] text-sm mb-4">
+              הטמע את המודל שלך בפלטפורמות מובילות וייצר תמונות מקצועיות במינימום זמן ומאמץ.
+            </p>
+            <a href="#pricing" class="inline-flex items-center text-[var(--accent)] hover:text-[var(--text-primary)] font-medium text-sm">
+              קבל גישה עכשיו
+              <i class="fas fa-arrow-left mr-1 text-xs"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="comparison" class="py-20 bg-gradient-to-b from-[var(--background)] to-[#222]">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-16 animate-on-scroll">
+        <div class="inline-block mb-4">
+          <div class="px-4 py-2 bg-[var(--light-bg)] rounded-full text-sm font-medium text-[var(--text-primary)] border border-[var(--accent)]/50">
+            ההבדל המהותי
+          </div>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-[var(--white)]">
+          כלים גנריים vs <span class="text-gradient-primary">המודל האישי שלך</span>
+        </h2>
+        <p class="text-lg text-[var(--text-white-subtle)] max-w-2xl mx-auto">
+          אל תתפשר על "בערך". ראה מדוע מודל אישי הוא הסטנדרט החדש בדיוק ובשליטה.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div class="bg-[var(--light-bg)] p-6 rounded-xl shadow-lg border border-[var(--dark-accent)] animate-on-scroll flex flex-col items-center text-center">
+          <div class="mb-4 p-3 rounded-full bg-[var(--dark-accent)]">
+            <i class="fas fa-crosshairs text-xl text-[var(--text-primary)]"></i>
+          </div>
+          <div class="text-2xl font-bold mb-1 text-gradient-primary">דיוק מושלם</div>
+          <p class="text-sm text-[var(--text-white-subtle)]">תמונות שנראות בדיוק כמוך, לא דמיון שטחי.</p>
+        </div>
+
+        <div class="bg-[var(--light-bg)] p-6 rounded-xl shadow-lg border border-[var(--dark-accent)] animate-on-scroll flex flex-col items-center text-center" style="animation-delay: 0.1s;">
+          <div class="mb-4 p-3 rounded-full bg-[var(--dark-accent)]">
+            <i class="fas fa-sliders-h text-xl text-[var(--text-secondary)]"></i>
+          </div>
+          <div class="text-2xl font-bold mb-1 text-gradient-secondary">שליטה מלאה</div>
+           <p class="text-sm text-[var(--text-white-subtle)]">שלוט בתאורה, זוויות, סגנון ואווירה.</p>
+        </div>
+
+        <div class="bg-[var(--light-bg)] p-6 rounded-xl shadow-lg border border-[var(--dark-accent)] animate-on-scroll flex flex-col items-center text-center" style="animation-delay: 0.2s;">
+          <div class="mb-4 p-3 rounded-full bg-[var(--dark-accent)]">
+            <i class="fas fa-infinity text-xl text-[var(--text-primary)]"></i>
+          </div>
+          <div class="text-2xl font-bold mb-1 text-gradient-primary">יצירה בלתי מוגבלת</div>
+          <p class="text-sm text-[var(--text-white-subtle)]">צור כמה תמונות שתרצה, מתי שתרצה.</p>
+        </div>
+
+        <div class="bg-[var(--light-bg)] p-6 rounded-xl shadow-lg border border-[var(--dark-accent)] animate-on-scroll flex flex-col items-center text-center" style="animation-delay: 0.3s;">
+          <div class="mb-4 p-3 rounded-full bg-[var(--dark-accent)]">
+            <i class="fas fa-check-double text-xl text-[var(--text-secondary)]"></i>
+          </div>
+          <div class="text-2xl font-bold mb-1 text-gradient-secondary">עקביות מוחלטת</div>
+          <p class="text-sm text-[var(--text-white-subtle)]">אותה דמות מדויקת בכל תמונה ותמונה.</p>
+        </div>
+      </div>
+
+      <div class="mt-16 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div class="animate-on-scroll">
+            <div class="aspect-square max-w-md mx-auto bg-gradient-to-br from-[var(--light-bg)]/30 to-[var(--dark-accent)]/30 rounded-2xl overflow-hidden border border-[var(--dark-accent)] shadow-xl shadow-[var(--text-secondary)]/10 relative">
+                <div class="absolute inset-4 bg-[var(--background)] rounded-xl shadow-lg p-6 flex items-center justify-center">
+                    <div class="text-center">
+                        <i class="fas fa-image text-6xl text-[var(--text-secondary)] opacity-50 mb-4"></i>
+                        <div class="h-4 w-32 bg-[var(--dark-accent)] rounded mx-auto mb-2"></div>
+                        <div class="h-3 w-40 bg-[var(--dark-accent)] rounded mx-auto mb-1"></div>
+                        <div class="h-3 w-24 bg-[var(--dark-accent)] rounded mx-auto"></div>
+                        <p class="text-xs text-[var(--text-white-subtle)] mt-4">תמונה לדוגמה שנוצרה עם המודל</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="space-y-6 animate-on-scroll" style="animation-delay: 0.1s;">
+            <h3 class="text-2xl font-bold text-[var(--white)]">מעבר לטכנולוגיה: <span class="text-gradient-primary">התוצאה</span></h3>
+            <p class="text-[var(--text-white-subtle)]">
+              הקורס לא רק מלמד אותך את ה'איך' הטכני, אלא מצייד אותך בהבנה עמוקה של העקרונות מאחורי יצירת תמונות איכותיות וריאליסטיות שמייצגות אותך באמת.
+            </p>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <div class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-[var(--dark-accent)] flex items-center justify-center">
+                  <div class="w-2 h-2 rounded-full bg-[var(--text-primary)]"></div>
+                </div>
+                <div>
+                  <h4 class="font-medium text-[var(--white)]">נכס דיגיטלי שלך</h4>
+                  <p class="text-[var(--text-white-subtle)]">המודל שתיצור הוא שלך, לשימושך הבלעדי, ללא תלות בפלטפורמות חיצוניות.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-[var(--dark-accent)] flex items-center justify-center">
+                  <div class="w-2 h-2 rounded-full bg-[var(--text-primary)]"></div>
+                </div>
+                <div>
+                  <h4 class="font-medium text-[var(--white)]">חיסכון בזמן ומשאבים</h4>
+                  <p class="text-[var(--text-white-subtle)]">הפסק לבזבז זמן על ניסיונות כושלים בכלים גנריים. צור תמונות מושלמות במהירות.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-[var(--dark-accent)] flex items-center justify-center">
+                  <div class="w-2 h-2 rounded-full bg-[var(--text-primary)]"></div>
+                </div>
+                <div>
+                  <h4 class="font-medium text-[var(--white)]">אפשרויות יצירתיות אינסופיות</h4>
+                  <p class="text-[var(--text-white-subtle)]">צור את עצמך בכל סגנון, תפאורה או סיטואציה שתוכל לדמיין - בדיוק מושלם.</p>
+                </div>
+              </li>
+            </ul>
+             <div class="pt-4">
+              <a href="#pricing" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-[var(--background)] bg-gradient-to-r from-[var(--text-primary)] to-[var(--accent)] hover:brightness-110 shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+                ראה את ההצעה המיוחדת
+                <i class="fas fa-arrow-left mr-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="py-20 bg-gradient-to-b from-[#222] to-[var(--background)]">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-16 animate-on-scroll">
+        <div class="inline-block mb-4">
+          <div class="px-4 py-2 bg-[var(--light-bg)] rounded-full text-sm font-medium text-[var(--text-primary)] border border-[var(--accent)]/50">
+            התהליך שלנו
+          </div>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-[var(--white)]">
+          אוספים, מאמנים, <span class="text-gradient-primary">יוצרים</span>
+        </h2>
+        <p class="text-lg text-[var(--text-white-subtle)] max-w-2xl mx-auto">
+          תהליך מובנה ופשוט שכל אחד יכול לעקוב אחריו כדי ליצור מודל תמונה אישי מדהים.
+        </p>
+      </div>
+
+      <div class="max-w-5xl mx-auto">
+        <div class="space-y-12">
+          <div class="flex flex-col md:flex-row gap-8 animate-on-scroll">
+            <div class="md:w-1/3 flex flex-col items-center md:items-start">
+              <div class="w-12 h-12 rounded-full bg-[var(--dark-accent)] flex items-center justify-center text-[var(--text-primary)] font-bold text-lg mb-4">1</div>
+              <h3 class="text-xl font-bold text-[var(--white)] mb-2">איסוף והכנת תמונות</h3>
+              <p class="text-[var(--text-white-subtle)] text-center md:text-right">
+                בחירת התמונות הנכונות והכנתן לפי עקרונות מקצועיים.
+              </p>
+            </div>
+            <div class="md:w-2/3 bg-[var(--light-bg)] rounded-xl p-6 shadow-lg border border-[var(--dark-accent)]">
+              <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-images text-[var(--text-primary)] mt-1"></i>
+                  <div>
+                    <h4 class="font-medium text-[var(--white)]">בחירת תמונות איכותיות</h4>
+                    <p class="text-[var(--text-white-subtle)] text-sm">נלמד את הקריטריונים לבחירת 15-25 תמונות מגוונות ואיכותיות שלך.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-crop-alt text-[var(--text-primary)] mt-1"></i>
+                  <div>
+                    <h4 class="font-medium text-[var(--white)]">עיבוד וחיתוך</h4>
+                    <p class="text-[var(--text-white-subtle)] text-sm">כלים וטכניקות לעיבוד וחיתוך נכון של התמונות לקבלת תוצאות מיטביות.</p>
+                  </div>
+                </div>
+                 <div class="flex items-start gap-3">
+                  <i class="fas fa-tags text-[var(--text-primary)] mt-1"></i>
+                  <div>
+                    <h4 class="font-medium text-[var(--white)]">תיוג אוטומטי וחכם</h4>
+                    <p class="text-[var(--text-white-subtle)] text-sm">שימוש בכלים לתיוג אוטומטי של התמונות כדי לעזור למודל ללמוד.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+           <div class="flex flex-col md:flex-row gap-8 animate-on-scroll" style="animation-delay: 0.1s;">
+            <div class="md:w-1/3 flex flex-col items-center md:items-start">
+              <div class="w-12 h-12 rounded-full bg-[var(--dark-accent)] flex items-center justify-center text-[var(--text-secondary)] font-bold text-lg mb-4">2</div>
+              <h3 class="text-xl font-bold text-[var(--white)] mb-2">אימון המודל (FAL)</h3>
+              <p class="text-[var(--text-white-subtle)] text-center md:text-right">
+                העלאת התמונות וקביעת פרמטרים לאימון המודל בענן.
+              </p>
+            </div>
+            <div class="md:w-2/3 bg-[var(--light-bg)] rounded-xl p-6 shadow-lg border border-[var(--dark-accent)]">
+              <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-cloud-upload-alt text-[var(--text-secondary)] mt-1"></i>
+                  <div>
+                    <h4 class="font-medium text-[var(--white)]">העלאה פשוטה ל-FAL</h4>
+                    <p class="text-[var(--text-white-subtle)] text-sm">ממשק ידידותי להעלאת סט התמונות המוכן לשירותי הענן.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-sliders-h text-[var(--text-secondary)] mt-1"></i>
+                  <div>
+                    <h4 class="font-medium text-[var(--white)]">הגדרת פרמטרים אופטימלית</h4>
+                    <p class="text-[var(--text-white-subtle)] text-sm">נלמד בדיוק אילו פרמטרים להגדיר כדי להבטיח אימון מוצלח ומדויק.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-hourglass-half text-[var(--text-secondary)] mt-1"></i>
+                  <div>
+                    <h4 class="font-medium text-[var(--white)]">תהליך אימון מהיר</h4>
+                    <p class="text-[var(--text-white-subtle)] text-sm">האימון עצמו לוקח מספר שעות בלבד, והמודל מוכן תוך פחות מיממה.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row gap-8 animate-on-scroll" style="animation-delay: 0.2s;">
+            <div class="md:w-1/3 flex flex-col items-center md:items-start">
+              <div class="w-12 h-12 rounded-full bg-[var(--dark-accent)] flex items-center justify-center text-[var(--text-primary)] font-bold text-lg mb-4">3</div>
+              <h3 class="text-xl font-bold text-[var(--white)] mb-2">שימוש ויצירה</h3>
+              <p class="text-[var(--text-white-subtle)] text-center md:text-right">
+                הטמעת המודל בפלטפורמות ויצירת תמונות מדהימות.
+              </p>
+            </div>
+            <div class="md:w-2/3 bg-[var(--light-bg)] rounded-xl p-6 shadow-lg border border-[var(--dark-accent)]">
+              <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-plug text-[var(--text-primary)] mt-1"></i>
+                  <div>
+                    <h4 class="font-medium text-[var(--white)]">חיבור לפלטפורמות</h4>
+                    <p class="text-[var(--text-white-subtle)] text-sm">חיבור קל ומהיר של המודל לפלטפורמות יצירת תמונות פופולריות (כמו ComfyUI, Stable Diffusion WebUI).</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-pen-fancy text-[var(--text-primary)] mt-1"></i>
+                  <div>
+                    <h4 class="font-medium text-[var(--white)]">כתיבת פרומפטים יעילה</h4>
+                    <p class="text-[var(--text-white-subtle)] text-sm">טכניקות לכתיבת פרומפטים שמנצלים את מלוא הפוטנציאל של המודל האישי שלך.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-infinity text-[var(--text-primary)] mt-1"></i>
+                  <div>
+                    <h4 class="font-medium text-[var(--white)]">יצירה בלתי מוגבלת</h4>
+                    <p class="text-[var(--text-white-subtle)] text-sm">צור אינסוף וריאציות, סגנונות וקומפוזיציות בדיוק מושלם.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="py-20 bg-gradient-to-b from-[var(--background)] to-[#222]">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-16 animate-on-scroll">
+        <div class="inline-block mb-4">
+          <div class="px-4 py-2 bg-[var(--light-bg)] rounded-full text-sm font-medium text-[var(--text-primary)] border border-[var(--accent)]/50">
+            הבוגרים שלנו מספרים
+          </div>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-[var(--white)]">
+          סיפורי <span class="text-gradient-primary">הצלחה</span> אמיתיים
+        </h2>
+        <p class="text-lg text-[var(--text-white-subtle)] max-w-2xl mx-auto">
+          אל תאמינו רק לנו - ראו מה יש לתלמידים שכבר עברו את התהליך להגיד.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div class="bg-[var(--light-bg)] p-6 rounded-xl shadow-lg border border-[var(--dark-accent)] animate-on-scroll">
+          <div class="mb-4 text-[var(--text-secondary)] opacity-50">
+            <i class="fas fa-quote-right text-3xl"></i>
+          </div>
+          <p class="text-[var(--text-white-subtle)] italic mb-6">
+            "לפני הקורס, ניסיתי את כל הכלים האפשריים ליצירת תמונות אישיות. שום דבר לא התקרב לאיכות שהשגתי עם המודל האישי שבניתי בקורס."
+          </p>
+          <div>
+            <div class="font-medium text-[var(--white)]">יוסי כהן</div>
+            <div class="text-sm text-[var(--text-secondary)] opacity-80">צלם עצמאי</div>
+          </div>
+        </div>
+
+        <div class="bg-[var(--light-bg)] p-6 rounded-xl shadow-lg border border-[var(--dark-accent)] animate-on-scroll" style="animation-delay: 0.1s;">
+          <div class="mb-4 text-[var(--text-secondary)] opacity-50">
+            <i class="fas fa-quote-right text-3xl"></i>
+          </div>
+          <p class="text-[var(--text-white-subtle)] italic mb-6">
+            "ההשקעה בקורס החזירה את עצמה תוך שבועיים. הלקוחות שלי מוכנים לשלם פרמיה על התמונות המדויקות והמקצועיות שאני מייצר עכשיו."
+          </p>
+          <div>
+            <div class="font-medium text-[var(--white)]">מיכל לוי</div>
+            <div class="text-sm text-[var(--text-secondary)] opacity-80">מעצבת גרפית</div>
+          </div>
+        </div>
+
+        <div class="bg-[var(--light-bg)] p-6 rounded-xl shadow-lg border border-[var(--dark-accent)] animate-on-scroll" style="animation-delay: 0.2s;">
+          <div class="mb-4 text-[var(--text-secondary)] opacity-50">
+            <i class="fas fa-quote-right text-3xl"></i>
+          </div>
+          <p class="text-[var(--text-white-subtle)] italic mb-6">
+            "אם אתם חושבים שתמונות של ChatGPT זה מרשים, אתם פשוט לא ראיתם מה אפשר לעשות עם מודל אישי מותאם. זה פשוט בעולם אחר."
+          </p>
+          <div>
+            <div class="font-medium text-[var(--white)]">אבי גולן</div>
+            <div class="text-sm text-[var(--text-secondary)] opacity-80">מנהל שיווק</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="py-20 bg-gradient-to-b from-[#222] to-[var(--background)] border-t border-[var(--dark-accent)]">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="bg-[var(--light-bg)] rounded-2xl shadow-xl shadow-[var(--text-primary)]/10 overflow-hidden mb-16 border-2 border-[var(--accent)] animate-on-scroll">
+          <div class="grid grid-cols-1 md:grid-cols-5">
+            <div class="p-8 md:p-12 md:col-span-3 text-center">
+              <h2 class="text-3xl font-bold mb-2 text-[var(--white)]">השקעה חד פעמית בנכס דיגיטלי <span class="text-gradient-primary">לכל החיים</span></h2>
+              <p class="text-[var(--text-white-subtle)] mb-6">כל מה שאתה צריך כדי להפוך למאסטר של הדמות הדיגיטלית שלך.</p>
+
+              <div class="my-8">
+                <div class="text-2xl text-[var(--text-secondary)] opacity-70 line-through">מחיר רגיל: 1,997₪</div>
+                <div class="text-6xl font-extrabold my-2 text-[var(--text-primary)]">997₪</div>
+                <div class="inline-block px-4 py-1 rounded-full text-sm font-semibold bg-[var(--text-secondary)] text-[var(--background)] shadow-md">
+                  מחיר השקה מיוחד - עולה בעוד 3 ימים!
+                </div>
+              </div>
+
+              <a href="#purchase-link" class="w-full md:w-auto inline-flex items-center justify-center px-10 py-4 border border-transparent text-lg font-medium rounded-full text-[var(--background)] bg-gradient-to-r from-[var(--text-primary)] to-[var(--accent)] hover:brightness-110 shadow-lg hover:shadow-xl transition-all transform hover:scale-105 mb-4">
+                כן! אני רוצה ליצור את המודל שלי עכשיו
+              </a>
+              <p class="text-xs text-[var(--text-white-subtle)] opacity-70">אחריות מלאה: לא מרוצה? קבל החזר מלא.</p>
+            </div>
+
+            <div class="p-8 md:p-12 md:col-span-2 bg-[var(--dark-accent)]/50">
+              <h3 class="text-xl font-semibold mb-6 text-[var(--white)]">מה כלול בחבילה:</h3>
+              <ul class="space-y-4 text-sm text-[var(--text-white-subtle)] includes">
+                <li><strong>8 מודולים מקיפים</strong> עם שיעורים מפורטים</li>
+                <li><strong>נגישות לתוכנת FAL Pro</strong> + קרדיטים</li>
+                <li><strong>קבוצת תמיכה פרטית</strong> עם מענה אישי</li>
+                <li><strong>טמפלטים ותהליכי עבודה</strong> ייחודיים</li>
+                <li><strong>עדכונים לכל החיים</strong> ללא תוספת תשלום</li>
+                <li><strong class="text-[var(--text-primary)]">אחריות להצלחה:</strong> החזר כספי מלא</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="faq" class="animate-on-scroll">
+           <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-10 text-center text-[var(--white)]">
+              שאלות <span class="text-gradient-secondary">נפוצות</span>
+           </h2>
+           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+             <div class="bg-[var(--light-bg)] p-6 rounded-lg border border-[var(--dark-accent)]">
+                <h4 class="font-semibold text-lg mb-2 text-[var(--text-secondary)]">האם אני צריך ידע קודם ב-AI?</h4>
+                <p class="text-sm text-[var(--text-white-subtle)]">לא! הקורס בנוי כך שכל אחד יכול להצליח, גם ללא רקע טכני. אנחנו מלמדים אותך את כל מה שאתה צריך לדעת, צעד אחר צעד.</p>
+             </div>
+             <div class="bg-[var(--light-bg)] p-6 rounded-lg border border-[var(--dark-accent)]">
+                <h4 class="font-semibold text-lg mb-2 text-[var(--text-secondary)]">כמה תמונות אני צריך?</h4>
+                <p class="text-sm text-[var(--text-white-subtle)]">בדרך כלל 15-25 תמונות איכותיות מספיקות, ואנחנו נלמד אותך בדיוק איך לבחור ולהכין אותן למודל מושלם.</p>
+             </div>
+             <div class="bg-[var(--light-bg)] p-6 rounded-lg border border-[var(--dark-accent)]">
+                <h4 class="font-semibold text-lg mb-2 text-[var(--text-secondary)]">כמה זמן לוקח לאמן מודל?</h4>
+                <p class="text-sm text-[var(--text-white-subtle)]">עם הטכניקות שלנו, איסוף והכנה לוקח כמה שעות בודדות. האימון עצמו בענן לוקח כ-3-5 שעות, והמודל מוכן תוך יממה.</p>
+             </div>
+             <div class="bg-[var(--light-bg)] p-6 rounded-lg border border-[var(--dark-accent)]">
+                <h4 class="font-semibold text-lg mb-2 text-[var(--text-secondary)]">האם אני צריך מחשב חזק?</h4>
+                <p class="text-sm text-[var(--text-white-subtle)]">לא! אנחנו משתמשים בשירותי ענן (FAL), כך שכל מה שאתה צריך הוא מחשב סטנדרטי וחיבור אינטרנט יציב.</p>
+             </div>
+           </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-12 bg-[var(--background)] border-t border-[var(--dark-accent)]">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div class="space-y-4">
+          <a href="#" class="flex items-center gap-2">
+            <i class="fas fa-magic-wand-sparkles text-[var(--text-primary)]"></i>
+            <span class="text-xl font-semibold text-[var(--white)]">
+              יוצר<span class="text-[var(--text-primary)]">המודלים</span>
+            </span>
+          </a>
+          <p class="text-sm text-[var(--text-white-subtle)] opacity-70">
+            המדריך המקצועי ליצירת מודל תמונה אישי ומדויק באמצעות בינה מלאכותית.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-semibold text-[var(--white)] uppercase tracking-wider mb-4">ניווט מהיר</h3>
+          <ul class="space-y-3">
+            <li><a href="#features" class="text-sm text-[var(--text-white-subtle)] hover:text-[var(--text-primary)] transition-colors">יתרונות</a></li>
+            <li><a href="#comparison" class="text-sm text-[var(--text-white-subtle)] hover:text-[var(--text-primary)] transition-colors">השוואה</a></li>
+            <li><a href="#process" class="text-sm text-[var(--text-white-subtle)] hover:text-[var(--text-primary)] transition-colors">תהליך</a></li>
+            <li><a href="#testimonials" class="text-sm text-[var(--text-white-subtle)] hover:text-[var(--text-primary)] transition-colors">המלצות</a></li>
+            <li><a href="#pricing" class="text-sm text-[var(--text-white-subtle)] hover:text-[var(--text-primary)] transition-colors">מחיר</a></li>
+             <li><a href="#faq" class="text-sm text-[var(--text-white-subtle)] hover:text-[var(--text-primary)] transition-colors">שאלות נפוצות</a></li>
+          </ul>
+        </div>
+
+        <div>
+           <h3 class="text-sm font-semibold text-[var(--white)] uppercase tracking-wider mb-4">משאבים נוספים</h3>
+           <ul class="space-y-3">
+            <li><span class="text-sm text-[var(--text-white-subtle)] opacity-50">בלוג (בקרוב)</span></li>
+            <li><span class="text-sm text-[var(--text-white-subtle)] opacity-50">מדריכים (בקרוב)</span></li>
+           </ul>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-semibold text-[var(--white)] uppercase tracking-wider mb-4">צור קשר</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <i class="fas fa-envelope text-[var(--text-primary)] mt-1"></i>
+              <span class="text-sm text-[var(--text-white-subtle)]">
+                support@model-creator.co.il
+              </span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-info-circle text-[var(--text-primary)] mt-1"></i>
+               <span class="text-sm text-[var(--text-white-subtle)]">
+                 מענה לשאלות בקבוצת התמיכה
+               </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-[var(--dark-accent)]">
+        <p class="text-sm text-[var(--text-white-subtle)] opacity-60 text-center">
+          © 2024 יוצר המודלים. כל הזכויות שמורות.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="fixed bottom-6 left-6 w-12 h-12 rounded-full bg-[var(--accent)] text-[var(--background)] shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-[var(--text-primary)] transform hover:scale-110">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#' || targetId.startsWith('#purchase')) return;
+
+        e.preventDefault();
+
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+           const offsetTop = targetElement.offsetTop;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -10% 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      el.style.opacity = 0;
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
+      el.classList.add('animate-on-scroll-init');
+      observer.observe(el);
+    });
+
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (backToTopBtn) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTopBtn.classList.remove('opacity-0', 'invisible');
+          backToTopBtn.classList.add('opacity-100', 'visible');
+        } else {
+          backToTopBtn.classList.add('opacity-0', 'invisible');
+          backToTopBtn.classList.remove('opacity-100', 'visible');
+        }
+      });
+
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+
+  </script>
+</body>
+</html>
