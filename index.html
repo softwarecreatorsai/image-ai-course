@@ -626,7 +626,7 @@
                 </div>
               </div>
 
-              <a href="#purchase-link" class="w-full md:w-auto inline-flex items-center justify-center px-10 py-4 border border-transparent text-lg font-medium rounded-full text-[var(--background)] bg-gradient-to-r from-[var(--text-primary)] to-[var(--accent)] hover:brightness-110 shadow-lg hover:shadow-xl transition-all transform hover:scale-105 mb-4">
+              <a href="https://www.softwarecreatorsai.com/plans-pricing" class="w-full md:w-auto inline-flex items-center justify-center px-10 py-4 border border-transparent text-lg font-medium rounded-full text-[var(--background)] bg-gradient-to-r from-[var(--text-primary)] to-[var(--accent)] hover:brightness-110 shadow-lg hover:shadow-xl transition-all transform hover:scale-105 mb-4">
                 כן! אני רוצה לשלוט בתמונות ה-AI שלי
               </a>
             </div>
@@ -679,23 +679,39 @@
   </button>
 
   <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const targetId = this.getAttribute('href');
-        if (targetId === '#' || targetId.startsWith('#purchase')) return;
+    // Wait for DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Handle smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#' || targetId.startsWith('#purchase')) return;
 
-        e.preventDefault();
+          e.preventDefault();
+          
+          // Check if we're in an iframe
+          const isInIframe = window.self !== window.top;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            // Adjust offset if you have a fixed header
+            const offsetPosition = targetElement.offsetTop - 80; // Example offset of 80px
 
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-           // Adjust offset if you have a fixed header
-           const offsetPosition = targetElement.offsetTop - 80; // Example offset of 80px
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-        }
+            // Use scrollIntoView for iframe scenarios for better compatibility
+            if (isInIframe) {
+              targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            } else {
+              // Standard scrolling for non-iframe context
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+              });
+            }
+          }
+        });
       });
     });
 
@@ -744,7 +760,6 @@
         });
       });
     }
-
   </script>
 </body>
 </html>
