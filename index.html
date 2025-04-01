@@ -139,30 +139,36 @@
 
         <div class="relative w-full max-w-4xl mx-auto mt-12 animate-slide-up" style="animation-delay: 0.4s;">
           <div class="aspect-[16/9] bg-gradient-to-br from-[var(--light-bg)]/50 to-[var(--dark-accent)]/50 overflow-hidden rounded-xl border border-[var(--dark-accent)] shadow-2xl shadow-[var(--text-primary)]/5">
-            <div class="absolute inset-0 flex items-center justify-center p-6">
-               <div class="flex items-center space-x-6 rtl:space-x-reverse">
-                   <div class="flex flex-col space-y-2 items-center">
-                       <div class="w-16 h-16 rounded-lg bg-[var(--dark-accent)] border border-[var(--text-secondary)]/30 flex items-center justify-center text-[var(--text-secondary)] opacity-70"><i class="fas fa-camera-retro"></i></div>
-                       <div class="w-12 h-12 rounded-lg bg-[var(--dark-accent)] border border-[var(--text-secondary)]/30 flex items-center justify-center text-[var(--text-secondary)] opacity-50"><i class="fas fa-images"></i></div>
-                       <div class="text-xs text-[var(--text-white-subtle)] mt-1">צילום מקצועי</div>
-                   </div>
-                   <i class="fas fa-long-arrow-alt-left text-3xl text-[var(--accent)] opacity-60"></i>
-                   <div class="flex flex-col items-center">
-                       <div class="w-24 h-24 rounded-full border-4 border-[var(--accent)] flex items-center justify-center bg-[var(--light-bg)] shadow-lg shadow-[var(--accent)]/20">
-                            <i class="fas fa-brain text-3xl text-[var(--accent)]"></i>
+            <div class="absolute inset-0 flex items-center justify-center p-2 sm:p-6">
+               <div class="flex items-center space-x-2 sm:space-x-6 rtl:space-x-reverse">
+                   <div class="flex flex-col space-y-1 sm:space-y-2 items-center">
+                       <div class="w-10 h-10 sm:w-16 sm:h-16 rounded-lg bg-[var(--dark-accent)] border border-[var(--text-secondary)]/30 flex items-center justify-center text-[var(--text-secondary)] opacity-70">
+                         <i class="fas fa-camera-retro text-sm sm:text-xl"></i>
                        </div>
-                       <div class="text-xs text-[var(--text-white-subtle)] mt-1">אימון מודל (LoRA)</div>
+                       <div class="w-8 h-8 sm:w-12 sm:h-12 rounded-lg bg-[var(--dark-accent)] border border-[var(--text-secondary)]/30 flex items-center justify-center text-[var(--text-secondary)] opacity-50">
+                         <i class="fas fa-images text-xs sm:text-base"></i>
+                       </div>
+                       <div class="text-[10px] sm:text-xs text-[var(--text-white-subtle)] mt-1">צילום מקצועי</div>
                    </div>
-                   <i class="fas fa-long-arrow-alt-left text-3xl text-[var(--text-primary)] opacity-80"></i>
+                   <i class="fas fa-long-arrow-alt-left text-xl sm:text-3xl text-[var(--accent)] opacity-60"></i>
                    <div class="flex flex-col items-center">
-                       <div class="w-20 h-20 rounded-lg bg-[var(--light-bg)] border-2 border-[var(--text-primary)]/50 flex items-center justify-center text-[var(--text-primary)] shadow-md shadow-[var(--text-primary)]/10"><i class="fas fa-user-check text-2xl"></i></div>
-                       <div class="text-xs text-[var(--text-white-subtle)] mt-1">תוצאה מדויקת</div>
+                       <div class="w-14 h-14 sm:w-24 sm:h-24 rounded-full border-2 sm:border-4 border-[var(--accent)] flex items-center justify-center bg-[var(--light-bg)] shadow-lg shadow-[var(--accent)]/20">
+                            <i class="fas fa-brain text-xl sm:text-3xl text-[var(--accent)]"></i>
+                       </div>
+                       <div class="text-[10px] sm:text-xs text-[var(--text-white-subtle)] mt-1">אימון מודל (LoRA)</div>
+                   </div>
+                   <i class="fas fa-long-arrow-alt-left text-xl sm:text-3xl text-[var(--text-primary)] opacity-80"></i>
+                   <div class="flex flex-col items-center">
+                       <div class="w-12 h-12 sm:w-20 sm:h-20 rounded-lg bg-[var(--light-bg)] border-2 border-[var(--text-primary)]/50 flex items-center justify-center text-[var(--text-primary)] shadow-md shadow-[var(--text-primary)]/10">
+                         <i class="fas fa-user-check text-lg sm:text-2xl"></i>
+                       </div>
+                       <div class="text-[10px] sm:text-xs text-[var(--text-white-subtle)] mt-1">תוצאה מדויקת</div>
                    </div>
                </div>
             </div>
           </div>
           <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2">
-            <div class="px-6 py-3 rounded-full text-sm font-medium bg-[var(--light-bg)]/80 backdrop-blur-md shadow-lg border border-[var(--accent)]/30 text-[var(--text-primary)]">
+            <div class="px-3 py-2 sm:px-6 sm:py-3 rounded-full text-xs sm:text-sm font-medium bg-[var(--light-bg)]/80 backdrop-blur-md shadow-lg border border-[var(--accent)]/30 text-[var(--text-primary)]">
               דיוק פוטו-ריאליסטי • שליטה מלאה • תוצאות עקביות
             </div>
           </div>
@@ -279,15 +285,28 @@
         </p>
       </div>
 
+      <!-- Original Photo Section -->
+      <div class="max-w-xs mx-auto mb-10 animate-on-scroll">
+        <div class="bg-[var(--light-bg)] p-4 rounded-xl shadow-lg border border-[var(--dark-accent)] text-center relative">
+          <div class="absolute -top-3 right-1/2 transform translate-x-1/2 px-4 py-1 bg-[var(--text-secondary)] text-[var(--background)] text-xs font-bold rounded-full z-10 shadow whitespace-nowrap">
+            התמונה המקורית
+          </div>
+          <div class="w-48 h-48 mx-auto rounded-lg overflow-hidden border-2 border-[var(--text-secondary)]/50 shadow-md">
+            <img src="images/original.PNG" alt="התמונה המקורית" class="w-full h-full object-contain bg-[var(--dark-accent)]/30">
+          </div>
+          <p class="text-xs text-[var(--text-white-subtle)] mt-3">
+            זוהי אחת מהתמונות המקוריות ששימשו לאימון המודל האישי
+          </p>
+        </div>
+      </div>
       <!-- New Image Comparison Section -->
       <div class="mt-16 max-w-5xl mx-auto animate-on-scroll">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
           <!-- Left Column: Generic Result (e.g., ChatGPT) -->
           <div class="bg-[var(--light-bg)] p-6 rounded-xl shadow-lg border border-[var(--dark-accent)] text-center">
             <h3 class="text-2xl font-bold mb-4 text-gradient-secondary">תוצאה גנרית (לדוגמה: ChatGPT)</h3>
-            <div class="image-placeholder">
-              <i class="fas fa-image text-6xl"></i>
-              <!-- Replace this div with: <img src="path/to/chatgpt-result.jpg" alt="תוצאה מ-ChatGPT" class="w-full h-full object-cover rounded-lg"> -->
+            <div class="aspect-square overflow-hidden rounded-lg">
+              <img src="images/chatgpt.PNG" alt="תוצאה מ-ChatGPT" class="w-full h-full object-cover rounded-lg">
             </div>
             <p class="text-sm text-[var(--text-white-subtle)]">
               תמונה שנוצרה עם כלי AI גנרי. שימו לב לחוסר דיוק בתווי פנים, פרטים מעוותים וחוסר עקביות כללי. התוצאה אולי מעניינת, אך רחוקה מלהיות ייצוג נאמן.
@@ -302,9 +321,8 @@
           <div class="bg-[var(--light-bg)] p-6 rounded-xl shadow-xl border-2 border-[var(--text-primary)] text-center relative overflow-hidden">
             <div class="absolute top-2 left-2 px-3 py-1 bg-[var(--text-primary)] text-[var(--background)] text-xs font-bold rounded-full z-10 shadow">התוצאה מהקורס</div>
             <h3 class="text-2xl font-bold mb-4 text-gradient-primary">תוצאה עם המודל האישי (מהקורס)</h3>
-            <div class="image-placeholder border-2 border-[var(--text-primary)]/30">
-               <i class="fas fa-check-circle text-6xl text-[var(--text-primary)]/80"></i>
-              <!-- Replace this div with: <img src="path/to/our-model-result.jpg" alt="תוצאה מהמודל שלנו" class="w-full h-full object-cover rounded-lg"> -->
+            <div class="aspect-square overflow-hidden rounded-lg border-2 border-[var(--text-primary)]/30">
+              <img src="images/our-model.jpg" alt="תוצאה מהמודל שלנו" class="w-full h-full object-cover rounded-lg">
             </div>
             <p class="text-sm text-[var(--text-white-subtle)]">
               תמונה שנוצרה עם מודל Flux LoRA שאומן לפי העקרונות הנלמדים בקורס. שימו לב לדיוק הפוטו-ריאליסטי, שמירה על תווי פנים ייחודיים, עקביות ואיכות הפרטים.
@@ -316,43 +334,6 @@
           </div>
         </div>
       </div>
-      <!-- End of New Image Comparison Section -->
-
-      <!-- Existing Comparison Advantages (kept for context) -->
-      <div class="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-         <div class="bg-[var(--light-bg)] p-6 rounded-xl shadow-lg border border-[var(--dark-accent)] animate-on-scroll flex flex-col items-center text-center">
-          <div class="mb-4 p-3 rounded-full bg-[var(--dark-accent)]">
-            <i class="fas fa-crosshairs text-xl text-[var(--text-primary)]"></i>
-          </div>
-          <div class="text-2xl font-bold mb-1 text-gradient-primary">דיוק מושלם</div>
-          <p class="text-sm text-[var(--text-white-subtle)]">תמונות שנראות בדיוק כמוך, לא דמיון שטחי.</p>
-        </div>
-
-        <div class="bg-[var(--light-bg)] p-6 rounded-xl shadow-lg border border-[var(--dark-accent)] animate-on-scroll flex flex-col items-center text-center" style="animation-delay: 0.1s;">
-          <div class="mb-4 p-3 rounded-full bg-[var(--dark-accent)]">
-            <i class="fas fa-sliders-h text-xl text-[var(--text-secondary)]"></i>
-          </div>
-          <div class="text-2xl font-bold mb-1 text-gradient-secondary">שליטה מלאה</div>
-           <p class="text-sm text-[var(--text-white-subtle)]">שלוט בתאורה, זוויות, סגנון ואווירה.</p>
-        </div>
-
-        <div class="bg-[var(--light-bg)] p-6 rounded-xl shadow-lg border border-[var(--dark-accent)] animate-on-scroll flex flex-col items-center text-center" style="animation-delay: 0.2s;">
-          <div class="mb-4 p-3 rounded-full bg-[var(--dark-accent)]">
-            <i class="fas fa-infinity text-xl text-[var(--text-primary)]"></i>
-          </div>
-          <div class="text-2xl font-bold mb-1 text-gradient-primary">יצירה בלתי מוגבלת</div>
-          <p class="text-sm text-[var(--text-white-subtle)]">צור כמה תמונות שתרצה, מתי שתרצה.</p>
-        </div>
-
-        <div class="bg-[var(--light-bg)] p-6 rounded-xl shadow-lg border border-[var(--dark-accent)] animate-on-scroll flex flex-col items-center text-center" style="animation-delay: 0.3s;">
-          <div class="mb-4 p-3 rounded-full bg-[var(--dark-accent)]">
-            <i class="fas fa-check-double text-xl text-[var(--text-secondary)]"></i>
-          </div>
-          <div class="text-2xl font-bold mb-1 text-gradient-secondary">עקביות מוחלטת</div>
-          <p class="text-sm text-[var(--text-white-subtle)]">אותה דמות מדויקת בכל תמונה ותמונה.</p>
-        </div>
-      </div>
-      <!-- End of Existing Comparison Advantages -->
 
 
       <div class="mt-20 max-w-6xl mx-auto">
