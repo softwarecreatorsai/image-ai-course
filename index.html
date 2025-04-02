@@ -691,15 +691,23 @@
           
           const targetElement = document.querySelector(targetId);
           if (targetElement) {
-            // Adjust offset if you have a fixed header
-            const offsetPosition = targetElement.offsetTop - 80;
-            
-            // Always use scrollIntoView for iframe compatibility
-            targetElement.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
+            // For mobile touch devices, use a timeout to ensure click registers
+            setTimeout(() => {
+              targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+              
+              // Additional fix for mobile - focus the target element
+              targetElement.setAttribute('tabindex', '-1');
+              targetElement.focus();
+            }, 100);
           }
+        });
+        
+        // Add touch event for mobile
+        anchor.addEventListener('touchend', function(e) {
+          this.click();
         });
       });
     });
@@ -744,6 +752,11 @@
           top: 0,
           behavior: 'smooth'
         });
+      });
+      
+      // Add touch event for mobile
+      backToTopBtn.addEventListener('touchend', function(e) {
+        this.click();
       });
     }
   </script>
