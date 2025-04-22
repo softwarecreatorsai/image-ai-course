@@ -7,6 +7,18 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+  <script>
+    // optional init
+    window.onload = function() {
+      window.micAccessTool = new MicAccessTool({
+        link: 'https://www.softwarecreatorsai.com/נגישות',
+        contact: 'mailto:softwarecreatorsai@hotmail.com',
+        buttonPosition: 'left', // default is 'left'
+        //forceLang: 'ru-RU' // default is 'en' may be 'he-IL', 'ru-RU', or 'fr_FR' - REMOVED for auto language detection
+      });
+    }
+  </script>
   <style>
     :root {
         --background: #1a1a1a;
